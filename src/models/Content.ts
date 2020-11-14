@@ -1,14 +1,28 @@
 export default class Content {
 
   private temperatura: string = "0";
+  private tempMax: string = "0";
+  private tempMin: string = "0";
   private luminosidade: string = "0";
+  private lumMax: string = "0";
+  private lumMin: string = "0";
   private umidade: string = "0";
+  private umidMax: string = "0";
+  private umidMin: string = "0";
 
 
-  constructor(temperatura: string, luminosidade: string, umidade: string) {
+  constructor(temperatura: string, tempMax: string, tempMin: string,
+    luminosidade: string, lumMax: string, lumMin: string,
+    umidade: string, umidMax: string, umidMin: string) {
     this.temperatura = temperatura
+    this.tempMax = tempMax
+    this.tempMin = tempMin
     this.luminosidade = luminosidade
+    this.lumMax = lumMax
+    this.lumMin = lumMin
     this.umidade = umidade
+    this.umidMax = umidMax
+    this.umidMin = umidMin
   }
 
   /**
@@ -57,6 +71,102 @@ export default class Content {
    */
   public set $umidade(value: string) {
     this.umidade = value;
+  }
+
+  /**
+   * Getter $tempMax
+   * @return {string }
+   */
+  public get $tempMax(): string {
+    return this.tempMax;
+  }
+
+  /**
+   * Setter $tempMax
+   * @param {string } value
+   */
+  public set $tempMax(value: string) {
+    this.tempMax = value;
+  }
+
+  /**
+   * Getter $tempMin
+   * @return {string }
+   */
+  public get $tempMin(): string {
+    return this.tempMin;
+  }
+
+  /**
+   * Setter $tempMin
+   * @param {string } value
+   */
+  public set $tempMin(value: string) {
+    this.tempMin = value;
+  }
+
+  /**
+   * Getter $lumMax
+   * @return {string }
+   */
+  public get $lumMax(): string {
+    return this.lumMax;
+  }
+
+  /**
+   * Setter $lumMax
+   * @param {string } value
+   */
+  public set $lumMax(value: string) {
+    this.lumMax = value;
+  }
+
+  /**
+   * Getter $lumMin
+   * @return {string }
+   */
+  public get $lumMin(): string {
+    return this.lumMin;
+  }
+
+  /**
+   * Setter $lumMin
+   * @param {string } value
+   */
+  public set $lumMin(value: string) {
+    this.lumMin = value;
+  }
+
+  /**
+   * Getter $umidMax
+   * @return {string }
+   */
+  public get $umidMax(): string {
+    return this.umidMax;
+  }
+
+  /**
+   * Setter $umidMax
+   * @param {string } value
+   */
+  public set $umidMax(value: string) {
+    this.umidMax = value;
+  }
+
+  /**
+   * Getter $umidMin
+   * @return {string }
+   */
+  public get $umidMin(): string {
+    return this.umidMin;
+  }
+
+  /**
+   * Setter $umidMin
+   * @param {string } value
+   */
+  public set $umidMin(value: string) {
+    this.umidMin = value;
   }
 
 }​​​​

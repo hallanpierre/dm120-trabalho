@@ -41,7 +41,9 @@ export class DweetService {
 
     for (let _with of data.with) {
       let content: Content
-      content = new Content(_with.content.temperatura, _with.content.luminosidade, _with.content.umidade);
+      content = new Content(_with.content.temperatura, _with.content.tempMax, _with.content.tempMin,
+        _with.content.luminosidade, _with.content.lumMax, _with.content.lumMin,
+        _with.content.umidade, _with.content.umidMax, _with.content.umidMin);
       _date = this.formatDate(_with.created)
       _time = this.formatTime(_with.created)
       let tempWith: With

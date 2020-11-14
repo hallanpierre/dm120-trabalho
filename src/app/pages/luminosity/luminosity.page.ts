@@ -14,10 +14,12 @@ export class LuminosityPage implements OnInit {
   private isLoading: boolean = true;
   private time: any;
   private dataPlot: Array<any>;
+  private dataPlotMax: Array<any>;
+  private dataPlotMin: Array<any>;
   options: Object;
 
   constructor(private dweetService: DweetService, public router: Router) {
-    this.time = setInterval(() => { this.getLastDweets() }, 3000)
+    this.time = setInterval(() => { this.getLastDweets() }, 10000)
   }
 
   ngOnInit() {
@@ -34,6 +36,8 @@ export class LuminosityPage implements OnInit {
 
   private getLastDweets() {
     this.dataPlot = []
+    this.dataPlotMax = []
+    this.dataPlotMin = []
     this.dweetService.loadLastDweets().subscribe(
       data => {
         this.preencherDweet(data)
@@ -69,6 +73,16 @@ export class LuminosityPage implements OnInit {
         name: 'luminosidade',
         data: this.dataPlot.reverse(),
         pointInterval: 60 * 60
+      },
+      {
+        name: 'lumMax',
+        data: this.dataPlotMax,
+        pointInterval: 60 * 60
+      },
+      {
+        name: 'lumMin',
+        data: this.dataPlotMin,
+        pointInterval: 60 * 60
       }]
     };
   }
@@ -77,6 +91,8 @@ export class LuminosityPage implements OnInit {
     for (let _with of dweet.with) {
       let epoch = new Date(_with.created).getTime()
       this.dataPlot.push([epoch, _with.content.$luminosidade])
+      this.dataPlotMax.push([epoch, _with.content.$lumMax])
+      this.dataPlotMin.push([epoch, _with.content.$lumMin])
     }
   }
 
