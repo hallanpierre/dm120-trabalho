@@ -11,3 +11,10 @@ Projeto para avaliação da disciplina **Introdução e desenvolvimento para IoT
 # App
 
 Projeto avaliativo.
+
+
+## Install and Run
+
+npm install
+
+npm start
