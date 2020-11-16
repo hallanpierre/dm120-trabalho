@@ -9,11 +9,12 @@ export default class Content {
   private umidade: string = "0";
   private umidMax: string = "0";
   private umidMin: string = "0";
-
+  private statusBuzzer: string = "0";
+  private current_color: string = "0";
 
   constructor(temperatura: string, tempMax: string, tempMin: string,
     luminosidade: string, lumMax: string, lumMin: string,
-    umidade: string, umidMax: string, umidMin: string) {
+    umidade: string, umidMax: string, umidMin: string, statusBuzzer: string, current_color: string) {
     this.temperatura = temperatura
     this.tempMax = tempMax
     this.tempMin = tempMin
@@ -23,6 +24,8 @@ export default class Content {
     this.umidade = umidade
     this.umidMax = umidMax
     this.umidMin = umidMin
+    this.statusBuzzer = statusBuzzer
+    this.current_color = current_color
   }
 
   /**
@@ -167,6 +170,38 @@ export default class Content {
    */
   public set $umidMin(value: string) {
     this.umidMin = value;
+  }
+
+  /**
+   * Getter $buzzer
+   * @return {string }
+   */
+  public get $statusBuzzer(): string {
+    return this.statusBuzzer;
+  }
+
+  /**
+   * Setter $buzzer
+   * @param {string } value
+   */
+  public set $statusBuzzer(value: string) {
+    this.statusBuzzer = value;
+  }
+
+  /**
+   * Getter $led
+   * @return {string }
+   */
+  public get $current_color(): string {
+    return this.current_color;
+  }
+
+  /**
+   * Setter $led
+   * @param {string } value
+   */
+  public set $current_color(value: string) {
+    this.current_color = value;
   }
 
 }​​​​

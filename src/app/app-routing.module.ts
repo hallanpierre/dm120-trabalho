@@ -26,6 +26,10 @@ const routes: Routes = [
   {
     path: 'humidity',
     loadChildren: () => import('./pages/humidity/humidity.module').then( m => m.HumidityPageModule)
+  },
+  {
+    path: 'buzzer-led',
+    loadChildren: () => import('./pages/buzzer-led/buzzer-led.module').then( m => m.BuzzerLedPageModule)
   }
 ];
 
